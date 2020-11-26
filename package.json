@@ -1,0 +1,20 @@
+{
+    "name": "migration-collection",
+    "author": {
+        "email": "zetxx@belogradchik.biz",
+        "name": "Elin Angelov",
+        "url": "https://github.com/zetxx"
+    },
+    "devDependencies": {
+        "tap": "*",
+        "semantic-release": "^17.0.1"
+      },
+      "scripts": {
+        "unit-test": "./node_modules/tap/bin/run.js --no-cov ./tests/unit/"
+      },
+      "homepage": "https://github.com/zetxx/migration-collection/blob/master/README.md",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/zetxx/migration-collection.git"
+      }
+}
