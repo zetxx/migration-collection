@@ -1,4 +1,4 @@
-const {join} = require('path');
+const {join, extname} = require('path');
 const readdir = require('util').promisify(require('fs').readdir);
 const readFile = require('util').promisify(require('fs').readFile);
 
@@ -75,16 +75,31 @@ const collectFiles = async({
 
 module.exports = async({
     directories = [],
+    extensions = ['.sql'],
     sortFn = defaultSortFn,
     importFn = defaultImportFn
 }) => {
     if (!Array.isArray(directories)) {
         throw new Error('directories should be array of paths');
     }
-    const collection = await collectFiles({
-        directories,
-        sortFn,
-        importFn
-    });
+    const collection = await directories.reduce(
+        async(list, dir) => {
+            const l = await list;
+            const nl = (await readdir(dir))
+                .filter((fn) =>
+                    extensions.indexOf(extname(fn)) >= 0
+                );
+            return l.concat({
+                dir,
+                migrations: await Promise.all(
+                    nl
+                    .sort(sortFn)
+                    .map(importFile({dir, importFn}))
+                )
+            });
+        },
+        Promise.resolve([])
+    );
+
     return collection;
 };
