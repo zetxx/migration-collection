@@ -7,11 +7,11 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "example 1",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "_test.js",
+            "program": "examples/1.js",
             "linux": {
                 "outputCapture": "std"
             }
