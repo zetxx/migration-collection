@@ -15,6 +15,18 @@
             "linux": {
                 "outputCapture": "std"
             }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "test",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "tests/unit/index.js",
+            "linux": {
+                "outputCapture": "std"
+            }
         }
     ]
 }
