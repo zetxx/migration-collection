@@ -3,6 +3,9 @@ const feeder = require('../lib/fs/feeder');
 const sorter = require('../lib/sorter');
 const importer = require('../lib/fs/importer');
 const locker = require('../lib/locker');
+const exec = require('../lib/exec');
+const exists = require('../lib/exists');
+const markExists = require('../lib/markExists');
 
 (async() => {
     const coll = await m({
@@ -11,7 +14,10 @@ const locker = require('../lib/locker');
         }),
         sorter: sorter({sortBy: 'baseName'}),
         importer: importer(),
-        locker: locker()
+        locker: locker(),
+        exec: exec(),
+        exists: exists(),
+        markExists: markExists()
     });
     console.log(JSON.stringify(coll, null, 4));
 })();
