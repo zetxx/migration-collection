@@ -4,29 +4,68 @@
 
 Simple implementation of migration collection.
 
-- `test.js` - example test, should return:
+- `examples/1.js` - example , should return:
 
 ```js
-[
-    {
-        "dir": "./mig_test/",
-        "migrations": [
-            {
+{
+    "dir": "tests/unit/runtime/migration_dir",
+    "list": [
+        {
+            "baseName": "1_bca.sql",
+            "path": "tests/unit/runtime/migration_dir",
+            "content": [
+                "--------------UP",
+                "SELECT 'up'",
+                "--------------DOWN",
+                "SELECT 'down'"
+            ],
+            "parsed": {
                 "up": "SELECT 'up'",
-                "down": "SELECT 'down'",
-                "id": "1_bca"
-            },
-            {
-                "up": "SELECT 'up'",
-                "down": "SELECT 'down'",
-                "id": "123_abc"
-            },
-            {
-                "up": "SELECT 'up'",
-                "down": "SELECT 'down'",
-                "id": "1234_abc"
+                "down": "SELECT 'down'"
             }
-        ]
-    }
-]
+        },
+        {
+            "baseName": "2_abc.sql",
+            "path": "tests/unit/runtime/migration_dir",
+            "content": [
+                "--------------UP",
+                "SELECT 'up'",
+                "--------------DOWN",
+                "SELECT 'down'"
+            ],
+            "parsed": {
+                "up": "SELECT 'up'",
+                "down": "SELECT 'down'"
+            }
+        },
+        {
+            "baseName": "5_abc.sql",
+            "path": "tests/unit/runtime/migration_dir",
+            "content": [
+                "--------------UP",
+                "SELECT 'up'",
+                "--------------DOWN",
+                "SELECT 'down'"
+            ],
+            "parsed": {
+                "up": "SELECT 'up'",
+                "down": "SELECT 'down'"
+            }
+        },
+        {
+            "baseName": "123_abc.sql",
+            "path": "tests/unit/runtime/migration_dir",
+            "content": [
+                "--------------UP",
+                "SELECT 'up'",
+                "--------------DOWN",
+                "SELECT 'down'"
+            ],
+            "parsed": {
+                "up": "SELECT 'up'",
+                "down": "SELECT 'down'"
+            }
+        }
+    ]
+}
 ```
