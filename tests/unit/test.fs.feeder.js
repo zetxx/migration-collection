@@ -14,22 +14,26 @@ tap.test('Feeder', async(t) => {
     t.same(
         await feederA(),
         {
-            dir: "tests/unit/runtime/migration_dir",
+            dir: 'tests/unit/runtime/migration_dir',
             list: [{
-                "baseName":"123_abc.sql","path":"tests/unit/runtime/migration_dir"
+                baseName: '123_abc.sql',
+                path: 'tests/unit/runtime/migration_dir'
             }, {
-                "baseName":"1_bca.sql","path":"tests/unit/runtime/migration_dir"
+                baseName: '1_bca.sql',
+                path: 'tests/unit/runtime/migration_dir'
             }, {
-                "baseName":"2_abc.sql","path":"tests/unit/runtime/migration_dir"
+                baseName: '2_abc.sql',
+                path: 'tests/unit/runtime/migration_dir'
             }, {
-                "baseName":"5_abc.sql","path":"tests/unit/runtime/migration_dir"
+                baseName: '5_abc.sql',
+                path: 'tests/unit/runtime/migration_dir'
             }]
         }
     );
     t.same(
         await feederB(),
         {
-            dir: "tests/unit/runtime/migration_dir",
+            dir: 'tests/unit/runtime/migration_dir',
             list: []
         },
         'should return empty list'
