@@ -2,9 +2,6 @@ const tap = require('tap');
 const parser = require('../../lib/parser');
 
 tap.test('Parser', (t) => {
-    console.log(parser([
-        "SELECT 'up'"
-    ]))
     t.same(
         parser([
             "--------------UP",
