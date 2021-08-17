@@ -23,7 +23,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "examples/mssql.js",
+            "program": "examples/mssql/index.js",
             "linux": {
                 "outputCapture": "std"
             }
