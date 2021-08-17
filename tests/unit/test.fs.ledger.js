@@ -7,9 +7,9 @@ const ls1 = {
     cwf: 'abc'
 };
 
-const ul = (obj) => {
+const ul = async(obj) => {
     try {
-        await unlink(path.join(obj.cwd, obj.cwf));
+        await unlink(join(obj.cwd, obj.cwf));
     } catch (e) {}
 }
 
@@ -18,7 +18,7 @@ tap.test('Ledger', async(t0) => {
     const ledger1 = ledger({cwd: './abc/dadeda'});
     const ledgerSuccess1 = ledger(ls1);
     await ul(ls1);
-    tap.test('Inncorect cwd', (t1) => {
+    tap.test('Incorrect cwd', (t1) => {
         t1.rejects(
             ledger1.check,
             'check should rejects'
@@ -55,10 +55,55 @@ tap.test('Ledger', async(t0) => {
         );
         t1.end();
     });
-    tap.test('Corect cwd', (t1) => {
-        t1.rejects(
+    tap.test('Correct cwd', async(t1) => {
+        await t1.rejects(
             ledgerSuccess1.check,
             'check should rejects'
+        );
+        await t1.resolves(
+            ledgerSuccess1.init,
+            'check should resolves'
+        );
+        await t1.resolves(
+            ledgerSuccess1.check,
+            'check should resolves now'
+        );
+        await t1.resolves(
+            ledgerSuccess1.lock,
+            'lock should resolves'
+        );
+        await t1.resolves(
+            ledgerSuccess1.unlock,
+            'unlock should resolves'
+        );
+        await t1.resolveMatch(
+            () => ledgerSuccess1.exists({baseName: 'a', path: 'a/b/c'}),
+            false,
+            'exists should resolves to false, resource not in list'
+        );
+        await t1.resolves(
+            () => ledgerSuccess1.markExists({baseName: 'a', path: 'a/b/c'}),
+            'markExists should resolves'
+        );
+        await t1.resolveMatch(
+            () => ledgerSuccess1.exists({baseName: 'a', path: 'a/b/c'}),
+            true,
+            'exists should resolves to true, resource in list'
+        );
+        await t1.resolveMatch(
+            () => ledgerSuccess1.exists({baseName: 'z', path: 'a/b/c'}),
+            false,
+            'exists should resolves to false, resource not in list'
+        );
+        await ledgerSuccess1.lock();
+        await t1.rejects(
+            ledgerSuccess1.lock,
+            'lock should rejects, already locked'
+        );
+        await ledgerSuccess1.unlock();
+        await t1.rejects(
+            ledgerSuccess1.unlock,
+            'unlock should rejects, already unlocked'
         );
         t1.end();
     });
