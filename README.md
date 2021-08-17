@@ -8,11 +8,11 @@ Simple implementation of migration collection.
 
 ```js
 {
-    "dir": "tests/unit/runtime/migration_dir",
+    "dir": "tests/unit/runtime/migration",
     "list": [
         {
             "baseName": "1_bca.sql",
-            "path": "tests/unit/runtime/migration_dir",
+            "path": "tests/unit/runtime/migration",
             "content": [
                 "--------------UP",
                 "SELECT 'up'",
@@ -26,7 +26,7 @@ Simple implementation of migration collection.
         },
         {
             "baseName": "2_abc.sql",
-            "path": "tests/unit/runtime/migration_dir",
+            "path": "tests/unit/runtime/migration",
             "content": [
                 "--------------UP",
                 "SELECT 'up'",
@@ -40,7 +40,7 @@ Simple implementation of migration collection.
         },
         {
             "baseName": "5_abc.sql",
-            "path": "tests/unit/runtime/migration_dir",
+            "path": "tests/unit/runtime/migration",
             "content": [
                 "--------------UP",
                 "SELECT 'up'",
@@ -54,7 +54,7 @@ Simple implementation of migration collection.
         },
         {
             "baseName": "123_abc.sql",
-            "path": "tests/unit/runtime/migration_dir",
+            "path": "tests/unit/runtime/migration",
             "content": [
                 "--------------UP",
                 "SELECT 'up'",

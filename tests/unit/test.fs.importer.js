@@ -5,7 +5,7 @@ const importer = require('../../lib/fs/importer')();
 tap.test('Importer', async(t) => {
     t.same(await importer({
         baseName: '123_abc.sql',
-        path: 'tests/unit/runtime/migration_dir'
+        path: 'tests/unit/runtime/migration'
     }), [
         '--------------UP',
         "SELECT 'up'",
@@ -14,7 +14,7 @@ tap.test('Importer', async(t) => {
       ]);
       t.rejects(importer({
         baseName: '123_abc.sql11',
-        path: 'tests/unit/runtime/migration_dir'
+        path: 'tests/unit/runtime/migration'
     }));
     t.end();
 });
