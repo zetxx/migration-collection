@@ -7,11 +7,23 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "example 1",
+            "name": "FS",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "examples/1.js",
+            "program": "examples/fs.js",
+            "linux": {
+                "outputCapture": "std"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "mssql",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "examples/mssql.js",
             "linux": {
                 "outputCapture": "std"
             }
