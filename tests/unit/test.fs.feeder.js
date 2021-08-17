@@ -1,11 +1,11 @@
 const tap = require('tap');
 const feeder = require('../../lib/fs/feeder');
 const feederA = feeder({
-    directory: 'tests/unit/runtime/migration_dir'
+    cwd: 'tests/unit/runtime/migration_dir'
 });
 
 const feederB = feeder({
-    directory: 'tests/unit/runtime/migration_dir',
+    cwd: 'tests/unit/runtime/migration_dir',
     extensions: ['.blabla']
 });
 
