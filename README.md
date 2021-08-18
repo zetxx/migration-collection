@@ -16,7 +16,12 @@ eg. if file name is `121_abc.sql`, integer keys is `121`
 - `ledger` - do the migration, acquire locks, check if migration is executed,
 execute it, and write it down
 
-`examples/1.js` - example , should return:
+## Examples
+
+`examples/fs.js` - fs example
+`examples/mssql.js` - ms sql example
+
+all of them should return following structure
 
 ```js
 [
