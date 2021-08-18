@@ -5,7 +5,7 @@
 Simple implementation of migration collection, ideas written down.
 aims to be easy for use, easy to be extended.
 
-currently only filesystem migration is implemented
+currently only filesystem and mssql migration is implemented
 
 - `feeder` - feeds with data collection, reads files from fs, and filters them
 based on extension

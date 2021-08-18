@@ -27,6 +27,7 @@ const query = (async() => {
         try {
             return await cPool.request().query(q);
         } catch (e) {
+            console.warn(q);
             console.error(e);
             throw e;
         }
