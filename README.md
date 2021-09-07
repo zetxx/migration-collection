@@ -1,6 +1,6 @@
 # Migration collection
 
-[![Build Status](https://travis-ci.com/zetxx/migration-collection.svg?branch=master)](https://travis-ci.com/zetxx/migration-collection)
+[![Build Status](https://travis-ci.com/zetxx/migration-collection.svg?branch=master)](https://app.travis-ci.com/github/zetxx/migration-collection)
 
 Simple implementation of migration collection, ideas written down.
 aims to be easy for use, easy to be extended.
