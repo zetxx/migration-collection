@@ -38,7 +38,7 @@ const query = (async() => {
     try {
         const coll = await m({
             feeder: feeder({
-                cwd: 'tests/unit/runtime/migration'
+                cwd: 'examples/mssql/migrations'
             }),
             sorter: sorter({sortBy: 'baseName'}),
             importer: importer(),
