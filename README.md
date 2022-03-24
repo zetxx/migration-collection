@@ -7,6 +7,9 @@ aims to be easy for use, easy to be extended.
 
 currently only filesystem and mssql migration is implemented
 
+*NOTE: every component can be redefined and added instead of
+default one*
+
 - `feeder` - feeds with data collection, reads files from fs, and filters them
 based on extension
 - `sorter` - sorts files based on it integer key
