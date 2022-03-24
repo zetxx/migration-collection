@@ -4,7 +4,6 @@ const {unlink} = require('fs/promises');
 
 const m = require('../../lib/index');
 const feeder = require('../../lib/fs/feeder');
-const sorter = require('../../lib/sorter');
 const importer = require('../../lib/fs/importer');
 const ledger = require('../../lib/fs/ledger');
 
@@ -24,7 +23,6 @@ tap.test('Main', async(t) => {
         feeder: feeder({
             cwd: 'tests/unit/runtime/migration'
         }),
-        sorter: sorter({sortBy: 'baseName'}),
         importer: importer(),
         ledger: ledger(ls1)
     });
@@ -32,7 +30,6 @@ tap.test('Main', async(t) => {
         feeder: feeder({
             cwd: 'tests/unit/runtime/migration'
         }),
-        sorter: sorter({sortBy: 'baseName'}),
         importer: importer(),
         ledger: ledger(ls1)
     });
@@ -41,7 +38,6 @@ tap.test('Main', async(t) => {
             cwd: 'tests/unit/runtime/migration',
             extensions: ['.zzz']
         }),
-        sorter: sorter({sortBy: 'baseName'}),
         importer: importer(),
         ledger: ledger(ls1)
     });
