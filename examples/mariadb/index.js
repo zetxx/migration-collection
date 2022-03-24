@@ -1,31 +1,24 @@
 const m = require('../../lib/index');
 const feeder = require('../../lib/fs/feeder');
-const sorter = require('../../lib/sorter');
 const importer = require('../../lib/fs/importer');
-const ledger = require('../../lib/mssql/ledger');
+const ledger = require('../../lib/mariadb/ledger');
 
-const sql = require('mssql');
+const sql = require('mariadb');
 
 const query = (async() => {
     const {
-        server,
+        host,
         user,
-        password,
-        pool,
-        database,
-        options
+        password
     } = require('./connection.config');
-    const cPool = await sql.connect({
-        server,
+    const cPool = await sql.createPool({
+        host,
         user,
-        password,
-        pool,
-        database,
-        options
+        password
     });
     return async(q) => {
         try {
-            return await cPool.request().query(q);
+            return (await cPool.getConnection()).query(q);
         } catch (e) {
             console.warn(q);
             console.error(e);
@@ -38,14 +31,12 @@ const query = (async() => {
     try {
         const coll = await m({
             feeder: feeder({
-                cwd: 'examples/mssql/migrations'
+                cwd: 'examples/mariadb/migrations'
             }),
-            sorter: sorter({sortBy: 'baseName'}),
             importer: importer(),
             ledger: ledger({
                 query: await query(),
-                database: require('./connection.config').database,
-                schema: 'dbo'
+                database: require('./connection.config').database
             })
         });
         console.log(JSON.stringify(coll, null, 4));

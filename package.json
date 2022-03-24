@@ -6,11 +6,12 @@
         "url": "https://github.com/zetxx"
     },
     "dependencies": {
-      "mssql": "7.2.0"
+      "mssql": "^8.0.2",
+      "mariadb": "^3.0.0"
     },
     "devDependencies": {
         "tap": "*",
-        "semantic-release": "^17.0.1"
+        "semantic-release": "^19.0.2"
       },
       "scripts": {
         "unit-test": "./node_modules/tap/bin/run.js --no-cov ./tests/unit/"

@@ -1,8 +1,8 @@
-const m = require('../lib/index');
-const feeder = require('../lib/fs/feeder');
-const sorter = require('../lib/sorter');
-const importer = require('../lib/fs/importer');
-const ledger = require('../lib/fs/ledger');
+const m = require('../../lib/index');
+const feeder = require('../../lib/fs/feeder');
+const sorter = require('../../lib/sorter');
+const importer = require('../../lib/fs/importer');
+const ledger = require('../../lib/fs/ledger');
 
 (async() => {
     try {
