@@ -5,7 +5,7 @@
 Simple implementation of migration collection, ideas written down.
 aims to be easy for use, easy to be extended.
 
-currently only filesystem and mssql migration is implemented
+currently only filesystem, mssql, mariadb, postgres migration is implemented
 
 *NOTE: every component can be redefined and added instead of
 default one*
@@ -19,10 +19,7 @@ eg. if file name is `121_abc.sql`, integer keys is `121`
 - `ledger` - do the migration, acquire locks, check if migration is executed,
 execute it, and write it down
 
-## Examples
-
-`examples/fs.js` - fs example
-`examples/mssql.js` - ms sql example
+## Examples - in example dir
 
 all of them should return following structure
 
