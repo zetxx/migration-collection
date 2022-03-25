@@ -7,7 +7,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "FS",
+            "name": "Example - FS",
             "skipFiles": [
                 "<node_internals>/**"
             ],
@@ -19,7 +19,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "mssql",
+            "name": "Example - mssql",
             "skipFiles": [
                 "<node_internals>/**"
             ],
@@ -31,11 +31,23 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "mariadb",
+            "name": "Example - mariadb",
             "skipFiles": [
                 "<node_internals>/**"
             ],
             "program": "examples/mariadb/index.js",
+            "linux": {
+                "outputCapture": "std"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Example - postgres",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "examples/postgres/index.js",
             "linux": {
                 "outputCapture": "std"
             }
