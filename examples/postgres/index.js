@@ -2,30 +2,27 @@ const m = require('../../lib/index');
 const feeder = require('../../lib/fs/feeder');
 const sorter = require('../../lib/sorter');
 const importer = require('../../lib/fs/importer');
-const ledger = require('../../lib/mssql/ledger');
+const ledger = require('../../lib/postgres/ledger');
 
-const sql = require('mssql');
+const sql = require('postgres');
 
 const query = (async() => {
     const {
-        server,
-        user,
+        host,
+        username,
         password,
-        pool,
-        database,
-        options
+        database
     } = require('./connection.config');
-    const cPool = await sql.connect({
-        server,
-        user,
+    const query = await sql({
+        host,
+        max: 1,
+        username,
         password,
-        pool,
-        database,
-        options
+        database
     });
     return async(q) => {
         try {
-            return await cPool.request().query(q);
+            return await query.unsafe(q);
         } catch (e) {
             console.warn(q);
             console.error(e);
@@ -38,7 +35,7 @@ const query = (async() => {
     try {
         const coll = await m({
             feeder: feeder({
-                cwd: 'examples/mssql/migrations'
+                cwd: 'examples/postgres/migrations'
             }),
             sorter: sorter({sortBy: 'baseName'}),
             importer: importer(),

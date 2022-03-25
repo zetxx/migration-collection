@@ -1,4 +1,6 @@
 --------------UP
-CREATE SCHEMA [testMigration]
+CREATE TABLE "migration-test"."dbo"."newtable" (
+    column1 varchar NULL
+);
 --------------DOWN
-DROP SCHEMA [testMigration]
+DROP TABLE "migration-test"."dbo"."newtable";
