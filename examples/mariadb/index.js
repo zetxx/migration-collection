@@ -14,7 +14,8 @@ const query = (async() => {
     const cPool = await sql.createPool({
         host,
         user,
-        password
+        password,
+        multipleStatements: true
     });
     return async(q) => {
         try {
