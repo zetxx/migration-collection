@@ -18,6 +18,8 @@ eg. if file name is `121_abc.sql`, integer keys is `121`
 - `parser` - parses imported file
 - `ledger` - do the migration, acquire locks, check if migration is executed,
 execute it, and write it down
+- `end` executes at the end, no mather if error was raised
+or migration succeeded
 
 ## Examples - in example dir
 
