@@ -1,4 +1,4 @@
 --------------UP
-CREATE SCHEMA [testMigration]
+CREATE SCHEMA [testMigration1]
 --------------DOWN
-DROP SCHEMA [testMigration]
+DROP SCHEMA [testMigration1]
