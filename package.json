@@ -1,18 +1,18 @@
 {
     "name": "migration-collection",
     "author": {
-        "email": "zetxx@belogradchik.biz",
+        "email": "me@zetxx.eu",
         "name": "Elin Angelov",
         "url": "https://github.com/zetxx"
     },
     "dependencies": {
-      "mssql": "^8.0.2",
-      "mariadb": "^3.0.0",
-      "postgres": "^3.0.0"
+      "mssql": "^8.1.2",
+      "mariadb": "^3.0.1",
+      "postgres": "^3.2.4"
     },
     "devDependencies": {
         "tap": "*",
-        "semantic-release": "^19.0.2"
+        "semantic-release": "^19.0.3"
       },
       "scripts": {
         "unit-test": "./node_modules/tap/bin/run.js --no-cov ./tests/unit/"
