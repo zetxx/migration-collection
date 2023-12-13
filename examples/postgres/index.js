@@ -1,5 +1,5 @@
 (async() => {
     await require('../../lib/postgres')(
-        require('./config')
+        require('./example.config')
     );
 })();

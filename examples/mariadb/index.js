@@ -1,5 +1,5 @@
 (async() => {
     await require('../../lib/mariadb')(
-        require('./config')
+        require('./example.config')
     );
 })();

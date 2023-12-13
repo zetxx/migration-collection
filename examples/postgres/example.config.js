@@ -3,8 +3,8 @@ module.exports = {
         host: 'localhost',
         username: 'postgres',
         password: '******',
+        schema: 'dbo',
         database: 'migration-test'
     },
-    schema: 'dbo',
     cwd: 'examples/postgres/migrations'
 };
