@@ -3,7 +3,6 @@ module.exports = {
         server: 'localhost',
         user: 'sa',
         password: '******',
-        schema: 'dbo',
         database: 'migration-test',
         pool: {
             max: 10,
@@ -15,5 +14,6 @@ module.exports = {
             trustServerCertificate: true // change to true for local dev / self-signed certs
         }
     },
+    migration: {schema: 'dbo'},
     cwd: 'examples/mssql/migrations'
 };
