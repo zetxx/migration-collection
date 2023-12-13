@@ -6,20 +6,21 @@
         "url": "https://github.com/zetxx"
     },
     "dependencies": {
-      "mssql": "^8.1.2",
-      "mariadb": "^3.0.1",
-      "postgres": "^3.2.4"
+        "mssql": "^8.1.2",
+        "mariadb": "^3.0.1",
+        "postgres": "^3.2.4"
     },
     "devDependencies": {
         "tap": "*",
         "semantic-release": "^19.0.3"
-      },
-      "scripts": {
+    },
+    "scripts": {
         "unit-test": "./node_modules/tap/bin/run.js --no-cov ./tests/unit/"
-      },
-      "homepage": "https://github.com/zetxx/migration-collection/blob/master/README.md",
-      "repository": {
+    },
+    "homepage": "https://github.com/zetxx/migration-collection/blob/master/README.md",
+    "repository": {
         "type": "git",
-        "url": "https://github.com/zetxx/migration-collection.git"
-      }
+        "url": "git@github.com:zetxx/migration-collection.git"
+    },
+    "version": "1.3.6"
 }
