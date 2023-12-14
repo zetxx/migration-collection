@@ -14,6 +14,6 @@ module.exports = {
             trustServerCertificate: true // change to true for local dev / self-signed certs
         }
     },
-    migration: {schema: 'dbo'},
+    schema: 'dbo',
     cwd: 'examples/mssql/migrations'
 };

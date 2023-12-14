@@ -5,6 +5,6 @@ module.exports = {
         password: '******',
         database: 'migration-test'
     },
-    migration: {schema: 'dbo'},
+    schema: 'dbo',
     cwd: 'examples/postgres/migrations'
 };
