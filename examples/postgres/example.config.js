@@ -1,8 +1,8 @@
 module.exports = {
     database: {
         host: 'localhost',
-        username: 'postgres',
-        password: '******',
+        user: 'postgres',
+        password: 'mysecretpassword',
         database: 'migration-test'
     },
     schema: 'dbo',
