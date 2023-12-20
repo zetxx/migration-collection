@@ -1,5 +1,5 @@
 module.exports = {
-    database: {
+    connection: {
         host: 'localhost',
         user: 'postgres',
         password: 'mysecretpassword',
