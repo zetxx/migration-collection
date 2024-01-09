@@ -15,5 +15,5 @@ module.exports = {
         }
     },
     schema: 'dbo',
-    cwd: 'examples/mssql/migrations'
+    cwd: ['examples/mssql/migrations']
 };

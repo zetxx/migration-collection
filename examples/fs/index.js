@@ -13,7 +13,7 @@ const ledger = require('../../lib/fs/ledger');
             sorter: sorter({sortBy: 'baseName'}),
             importer: importer(),
             ledger: ledger({
-                cwd: 'tests/unit/runtime/ledger'
+                cwd: ['tests/unit/runtime/ledger']
             })
         });
         console.log(JSON.stringify(coll, null, 4));

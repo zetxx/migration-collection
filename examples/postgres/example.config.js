@@ -6,5 +6,5 @@ module.exports = {
         database: 'migration-test'
     },
     schema: 'dbo',
-    cwd: 'examples/postgres/migrations'
+    cwd: ['examples/postgres/migrations']
 };

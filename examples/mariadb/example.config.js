@@ -5,5 +5,5 @@ module.exports = {
         password: '*****',
         database: 'migration-test'
     },
-    cwd: 'examples/mariadb/migrations'
+    cwd: ['examples/mariadb/migrations']
 };
